@@ -1,6 +1,6 @@
 # Bi-Directional Modality Fusion Network For Audio-Visual Event Localization
 
-This repo holds the code for the work presented on ICASSP 2022 
+This repo holds the code for the work presented on ICASSP 2022 [[Paper]](https://ieeexplore.ieee.org/document/9746280) 
 
 # Prerequisites
 
@@ -14,15 +14,15 @@ pip install -r requirements.txt
 
 # Code and Data Preparation
 
-We highly appreciate YapengTian for the shared features and code.
+We highly appreciate [@YapengTian](https://github.com/YapengTian/AVE-ECCV18) for the shared features and code.
 
 ## Download Features ##
 
 Two kinds of features (i.e., Visual features and Audio features) are required for experiments.
 
-- Visual Features: You can download the VGG visual features from here.
-* Audio Features: You can download the VGG-like audio features from here.
-+ Additional Features: You can download the features of background videos here, which are required for the experiments of the weakly-supervised setting.
+- Visual Features: You can download the VGG visual features from [here](https://drive.google.com/file/d/1hQwbhutA3fQturduRnHMyfRqdrRHgmC9/view).
+* Audio Features: You can download the VGG-like audio features from [here](https://drive.google.com/file/d/1F6p4BAOY-i0fDXUOhG7xHuw_fnO5exBS/view).
++ Additional Features: You can download the features of background videos [here](https://drive.google.com/file/d/1I3OtOHJ8G1-v5G2dHIGCfevHQPn-QyLh/view), which are required for the experiments of the weakly-supervised setting.
 
 After downloading the features, please place them into the ```data``` folder. The structure of the ```data```  folder is shown as follows:
 
@@ -41,13 +41,26 @@ data
 ```
 ## Download Datasets (Optional) ##
 
-You can download the AVE dataset from the repo here.
+You can download the AVE dataset from the repo [here](https://drive.google.com/file/d/1FjKwe79e0u96vdjIVwfRQ1V6SoDHe7kK/view).
 
 # Training and testing BMFN in a fully-supervised setting 
 
-# Training and testing BMFN in a Weakly-supervised setting
+Training
 
-Similar to training the model in a fully-supervised setting, you can run training and testing using the following commands:
+```ruby
+bash supv_train.sh
+# The argument "--snapshot_pref" denotes the path for saving checkpoints and code.
+```
+
+Evaluating
+
+```ruby
+bash supv_test.sh
+```
+
+After training, there will be a checkpoint file whose name contains the accuracy on the test set and the number of epoch.
+
+# Training and testing BMFN in a Weakly-supervised setting
 
 Training
 
